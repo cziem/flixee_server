@@ -1,0 +1,29 @@
+{
+  "name": "flixee",
+  "version": "1.0.0",
+  "description": "A mini Netflix App",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cloudinary": "^1.16.0",
+    "cors": "*",
+    "dotenv": "*",
+    "express": "*",
+    "express-fileupload": "^0.4.0",
+    "fast-csv": "^2.4.1",
+    "json2csv": "^4.2.1",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "mongoose-unique-validator": "^2.0.3",
+    "multer": "^1.3.1",
+    "multer-storage-cloudinary": "^2.2.1",
+    "passport": "*",
+    "passport-jwt": "*"
+  },
+  "author": "Favour George",
+  "license": "ISC"
+}
