@@ -10,11 +10,12 @@ const config = require('../config/database');
 var uniqueValidator = require('mongoose-unique-validator');
 const UserSchema = mongoose.Schema({
     firstname: {
-        type: String
+        type: String,
+        trim : true
     },
-
     lastname: {
-        type: String
+        type: String,
+        trim: true
     },
     email: {
         type: String,
@@ -53,7 +54,6 @@ module.exports.addUser = function (newUser, callback) {
             newUser.password = hash;
             newUser.save(callback);
         });
-
     })
 }
 

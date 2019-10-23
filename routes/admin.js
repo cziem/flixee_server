@@ -1,22 +1,24 @@
 const express = require('express');
-const passport = require('passport');
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
 const config = require('../config/database');
 const Admin = require('../models/admin');
 const Movie = require('../models/movie');
-
-var multer = require('multer');
-const fs = require('fs')
+const multer = require('multer');
+const { cloud_name, api_key, api_secret } = process.env
 
 const router = express.Router();
 
+const cloudOptions = {
+    cloud_name,
+    api_secret,
+    api_key
+}
+
 const cloudinary = require("cloudinary");
-const cloudinaryConfig = require('../config/cloudinary')
+const cloudinaryConfig = cloudOptions;
 const cloudinaryStorage = require("multer-storage-cloudinary");
 
 const url = 'http://127.0.0.1:4200'
-// const url = 'https://careermeze-dev.herokuapp.com'
 
 //Admin Registration
 router.post('/register', (req, res, next) => {

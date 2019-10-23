@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
-const config = require('../config/database');
+const uniqueValidator = require('mongoose-unique-validator');
 
-var uniqueValidator = require('mongoose-unique-validator');
 const AdminSchema = mongoose.Schema({
     firstname: {
-        type: String
+        type: String,
+        trim: true
     },
-
     lastname: {
-        type: String
+        type: String,
+        trim: true
     },
 
     email: {
